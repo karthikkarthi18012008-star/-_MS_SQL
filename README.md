@@ -46,3 +46,45 @@ This project demonstrates basic SQL operations using an employee database. It co
 * Data Retrieval
 * String Functions
 
+# 🗄️ SQL Filtering & Sorting
+
+## 📌 Overview
+
+This project demonstrates basic SQL queries for retrieving, filtering, sorting, and managing employee data using Microsoft SQL Server.
+
+## 🛠️ Technologies
+
+* Microsoft SQL Server
+* SQL
+
+## 📚 Concepts Covered
+
+* `CREATE TABLE`
+* `INSERT INTO`
+* `SELECT`
+* `DISTINCT`
+* Temporary Tables (`#Temp`, `##Temp`)
+* `WHERE`
+* `ORDER BY`
+* `AND`, `OR`, `NOT`
+* `BETWEEN`
+* `IN`
+* `NOT IN`
+
+## 🎯 Learning Outcomes
+
+* Create and populate tables
+* Retrieve unique records
+* Work with temporary tables
+* Filter data using conditions
+* Sort data in ascending and descending order
+* Use logical and comparison operators
+
+## 🚀 Skills Practiced
+
+* Data Retrieval
+* Data Filtering
+* Data Sorting
+* Temporary Tables
+* SQL Query Writing
+
