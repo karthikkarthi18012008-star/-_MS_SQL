@@ -87,4 +87,77 @@ This project demonstrates basic SQL queries for retrieving, filtering, sorting, 
 * Data Sorting
 * Temporary Tables
 * SQL Query Writing
+# SQL DML Commands
 
+## Concepts Covered
+- INSERT
+- NULL
+- IS NULL / IS NOT NULL
+- UPDATE
+- Temporary Tables
+- DELETE
+- TRUNCATE
+- DROP
+
+---
+
+## INSERT
+- Adds new records into a table.
+- Can insert all columns or selected columns.
+
+---
+
+## NULL
+- Represents a missing or unknown value.
+- Compare using `IS NULL` or `IS NOT NULL`, not `=`.
+
+---
+
+## UPDATE
+- Modifies existing records.
+- Use `WHERE` to update specific rows.
+- Without `WHERE`, all rows are updated.
+
+---
+
+## Temporary Table
+- Created using `SELECT INTO`.
+- Exists only for the current session.
+
+---
+
+## DELETE
+- Removes selected rows.
+- Without `WHERE`, all rows are deleted.
+- Table structure remains.
+
+---
+
+## TRUNCATE
+- Removes all rows from a table.
+- Faster than `DELETE`.
+- Table structure remains.
+
+---
+
+## DROP
+- Removes the entire table and its data permanently.
+
+---
+
+## DELETE vs TRUNCATE vs DROP
+
+| Command | Removes Data | Removes Table | WHERE |
+|----------|-------------|---------------|--------|
+| DELETE | ✅ | ❌ | ✅ |
+| TRUNCATE | ✅ (All) | ❌ | ❌ |
+| DROP | ✅ | ✅ | ❌ |
+
+---
+
+## Learning Outcomes
+- Insert records into a table.
+- Handle NULL values correctly.
+- Update existing records.
+- Work with temporary tables.
+- Understand the difference between DELETE, TRUNCATE, and DROP.
