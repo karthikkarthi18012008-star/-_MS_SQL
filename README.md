@@ -161,3 +161,42 @@ This project demonstrates basic SQL queries for retrieving, filtering, sorting, 
 - Update existing records.
 - Work with temporary tables.
 - Understand the difference between DELETE, TRUNCATE, and DROP.
+- # SQL Aggregate Functions - MAX & GROUP BY
+
+## Concepts Covered
+- MAX()
+- GROUP BY
+- Aggregate Functions
+- Aliases (`AS`)
+
+---
+
+## MAX()
+- Returns the highest value in a column.
+- Works with numeric, date, and text columns.
+
+**Examples:**
+- Maximum Total Amount
+- Latest Sale Date
+- Maximum Payment Method (alphabetically)
+
+---
+
+## GROUP BY
+- Groups rows with the same values.
+- Commonly used with aggregate functions like `MAX()`, `MIN()`, `SUM()`, `AVG()`, and `COUNT()`.
+
+---
+
+## MAX() with GROUP BY
+- Find the maximum quantity for each product.
+- Find the maximum sales amount for each sale date.
+
+---
+
+## Learning Outcomes
+- Find the maximum value in a column using `MAX()`.
+- Group records using `GROUP BY`.
+- Combine aggregate functions with grouped data.
+- Use column aliases to improve query readability.s
+
