@@ -199,4 +199,82 @@ This project demonstrates basic SQL queries for retrieving, filtering, sorting, 
 - Group records using `GROUP BY`.
 - Combine aggregate functions with grouped data.
 - Use column aliases to improve query readability.s
+- # SQL Aggregate Functions - MIN, SUM, AVG, COUNT, GROUP BY, HAVING
+
+## Concepts Covered
+- MIN()
+- SUM()
+- AVG()
+- COUNT()
+- GROUP BY
+- HAVING
+- ORDER BY
+
+---
+
+## MIN()
+- Returns the smallest value in a column.
+- Works with numbers, dates, and text.
+- Can be combined with `GROUP BY`.
+
+---
+
+## SUM()
+- Returns the total of numeric values.
+- Commonly used with `GROUP BY`.
+
+---
+
+## AVG()
+- Returns the average of numeric values.
+- Ignores `NULL` values.
+
+---
+
+## COUNT()
+- `COUNT(*)` → Counts all rows.
+- `COUNT(column)` → Counts only non-NULL values.
+- `COUNT(DISTINCT column)` → Counts unique values.
+
+---
+
+## GROUP BY
+- Groups rows having the same values.
+- Used with aggregate functions like `MIN()`, `SUM()`, `AVG()`, and `COUNT()`.
+
+---
+
+## HAVING
+- Filters grouped results.
+- Used after `GROUP BY`.
+- Supports aggregate functions.
+
+---
+
+## ORDER BY
+- Sorts the result set.
+- `ASC` → Ascending (default)
+- `DESC` → Descending
+
+---
+
+## WHERE vs HAVING
+
+| WHERE | HAVING |
+|--------|---------|
+| Filters rows | Filters groups |
+| Before `GROUP BY` | After `GROUP BY` |
+| Cannot use aggregate functions | Can use aggregate functions |
+
+---
+
+## Learning Outcomes
+- Find minimum values using `MIN()`.
+- Calculate totals with `SUM()`.
+- Find averages using `AVG()`.
+- Count records using `COUNT()`.
+- Group data with `GROUP BY`.
+- Filter grouped data using `HAVING`.
+- Sort results using `ORDER BY`.
+- Understand the difference between `WHERE` and `HAVING`.
 
