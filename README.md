@@ -277,4 +277,85 @@ This project demonstrates basic SQL queries for retrieving, filtering, sorting, 
 - Filter grouped data using `HAVING`.
 - Sort results using `ORDER BY`.
 - Understand the difference between `WHERE` and `HAVING`.
+# SQL Joins Practice (Microsoft SQL Server)
+
+## 📌 Database
+- Sales Database
+
+## 📖 Concepts Covered
+- INNER JOIN
+- LEFT JOIN (LEFT OUTER JOIN)
+- RIGHT JOIN (RIGHT OUTER JOIN)
+- FULL OUTER JOIN
+- LEFT ANTI JOIN
+- RIGHT ANTI JOIN
+- SELF JOIN
+
+## 📂 Tables Used
+
+### Table1
+| Column | Data Type |
+|--------|-----------|
+| C1 | INT |
+| C2 | NVARCHAR(MAX) |
+
+### Table2
+| Column | Data Type |
+|--------|-----------|
+| C1 | INT |
+| C3 | NVARCHAR(MAX) |
+
+## 🔹 SQL Operations
+
+### 1. Create Tables
+- Created `table1`
+- Created `table2`
+
+### 2. Insert Data
+- Added sample records into both tables.
+- Included duplicate values and `NULL` values to understand join behavior.
+
+### 3. INNER JOIN
+Returns only the matching rows from both tables.
+
+### 4. LEFT JOIN
+Returns all rows from the left table and matching rows from the right table. If there is no match, `NULL` values are returned for the right table.
+
+### 5. RIGHT JOIN
+Returns all rows from the right table and matching rows from the left table. If there is no match, `NULL` values are returned for the left table.
+
+### 6. LEFT ANTI JOIN
+Returns rows that exist only in the left table.
+
+```sql
+LEFT JOIN ...
+WHERE b.C1 IS NULL;
+```
+
+### 7. RIGHT ANTI JOIN
+Returns rows that exist only in the right table.
+
+```sql
+RIGHT JOIN ...
+WHERE a.C1 IS NULL;
+```
+
+### 8. FULL OUTER JOIN
+Returns all rows from both tables, whether they match or not.
+
+### 9. SELF JOIN
+Joins a table with itself using aliases.
+
+## 🎯 Learning Outcomes
+After completing this practice, you will be able to:
+
+- Understand different types of SQL joins.
+- Compare INNER, LEFT, RIGHT, and FULL joins.
+- Find unmatched records using Anti Joins.
+- Perform Self Joins using table aliases.
+- Work with duplicate and NULL values in joins.
+
+## 🛠️ Tools Used
+- Microsoft SQL Server
+- SQL Server Management Studio (SSMS)
 
