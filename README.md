@@ -359,3 +359,129 @@ After completing this practice, you will be able to:
 - Microsoft SQL Server
 - SQL Server Management Studio (SSMS)
 
+# SQL UNION, UNION ALL & LIKE Operator (Microsoft SQL Server)
+
+## 📌 Database
+- Sales Database
+
+## 📖 Concepts Covered
+- UNION
+- UNION ALL
+- Rules of UNION
+- LIKE Operator
+- Wildcards in SQL
+
+---
+
+## 📂 Tables Used
+
+### append1
+| Column | Data Type |
+|--------|-----------|
+| C1 | INT |
+| C2 | NVARCHAR(255) |
+| C3 | INT |
+
+### append2
+| Column | Data Type |
+|--------|-----------|
+| C1 | INT |
+| C2 | NVARCHAR(255) |
+| C3 | INT |
+
+### Employees_US
+| Column | Data Type |
+|--------|-----------|
+| EmployeeID | INT |
+| FirstName | VARCHAR(50) |
+| LastName | VARCHAR(50) |
+| Department | VARCHAR(50) |
+
+---
+
+## 🔹 SQL Operations
+
+### 1. UNION ALL
+- Combines rows from two or more SELECT statements.
+- Includes duplicate rows.
+- Faster because it does not remove duplicates.
+
+### 2. UNION
+- Combines rows from two or more SELECT statements.
+- Removes duplicate rows automatically.
+- Slightly slower because SQL Server checks for duplicates.
+
+---
+
+## ✅ Rules of UNION
+
+- Number of columns must be the same.
+- Data types of corresponding columns must be compatible.
+- Column order must be the same.
+- Column names in the result are taken from the first SELECT statement.
+
+---
+
+## 🔹 LIKE Operator
+
+The `LIKE` operator is used to search for patterns in text data.
+
+### Wildcards Used
+
+| Wildcard | Meaning | Example |
+|----------|---------|---------|
+| `%` | Zero or more characters | `'A%'` |
+| `_` | Exactly one character | `'A____'` |
+| `[ABC]` | Any one of the listed characters | `'[CD]%'` |
+| `[A-L]` | Any character in the range | `'[A-L]%'` |
+| `[^AEIOU]` | Any character except the listed characters | `'[^AEIOU]%'` |
+
+---
+
+## 🔹 LIKE Practice Queries
+
+- Last name starts with **S**
+- First name ends with **a**
+- Department contains **Eng**
+- Last name has exactly **5 characters**
+- First name starts with **C** or **D**
+- Last name contains **son**
+- Second character is **i**
+- Last name starts from **A–L**
+- First name does **not** contain **o**
+- Last name ends with **a** and has **5 characters**
+- Department starts with **Mar** and ends with **ing**
+- Third character is **a**
+- Last name starts with **Br** or **Bl**
+- First name starts with a **vowel**
+- First name does **not** start with a consonant
+- First name starts with a **consonant**
+
+---
+
+## 🎯 Learning Outcomes
+
+After completing this practice, you will be able to:
+
+- Understand the difference between `UNION` and `UNION ALL`.
+- Apply the rules required for `UNION`.
+- Use the `LIKE` operator for pattern matching.
+- Work with SQL wildcards (`%`, `_`, `[]`, `[^]`).
+- Write queries to filter text data efficiently.
+
+---
+
+## 🛠️ Tools Used
+
+- Microsoft SQL Server
+- SQL Server Management Studio (SSMS)
+
+---
+
+## 📁 File
+
+`union_unionall_like.sql`
+
+---
+
+**Author:** Karthik T
