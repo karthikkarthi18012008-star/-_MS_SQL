@@ -480,8 +480,170 @@ After completing this practice, you will be able to:
 
 ## 📁 File
 
+
 `union_unionall_like.sql`
 
 ---
 
 **Author:** Karthik T
+# SQL CASE Statement in MS SQL Server
+
+## 📌 Overview
+The `CASE` statement is used to apply conditional logic in SQL. It works like an `IF...ELSE` statement in programming languages and helps return different values based on specified conditions.
+
+---
+
+# Concepts Covered
+
+- Simple CASE statement
+- CASE with ELSE
+- CASE without ELSE
+- Using CASE in ORDER BY
+- Nested CASE statement
+- Categorizing data using CASE
+- Custom sorting with CASE
+
+---
+
+# Syntax
+
+```sql
+CASE
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    ELSE result3
+END
+```
+
+---
+
+# Example 1: Categorize Products by Price
+
+### Requirement
+Classify products into:
+
+- HIGH
+- MEDIUM
+- LOW
+
+```sql
+SELECT *,
+CASE
+    WHEN Price >= 500 THEN 'HIGH'
+    WHEN Price >= 200 THEN 'MEDIUM'
+    ELSE 'LOW'
+END AS Price_Category
+FROM Products;
+```
+
+### Output
+
+| Price | Category |
+|--------|----------|
+| 650 | HIGH |
+| 350 | MEDIUM |
+| 120 | LOW |
+
+---
+
+# CASE Without ELSE
+
+If no condition matches, SQL returns **NULL**.
+
+```sql
+SELECT *,
+CASE
+    WHEN Price >= 500 THEN 'HIGH'
+    WHEN Price >= 200 THEN 'MEDIUM'
+END AS Price_Category
+FROM Products;
+```
+
+---
+
+# Example 2: Custom Sorting Using CASE
+
+### Requirement
+
+Display categories in this order:
+
+1. Electronics
+2. Furniture
+3. Accessories
+
+```sql
+SELECT *
+FROM Products
+ORDER BY
+CASE
+    WHEN Category = 'Electronics' THEN 1
+    WHEN Category = 'Furniture' THEN 2
+    WHEN Category = 'Accessories' THEN 3
+END;
+```
+
+---
+
+# Example 3: Nested CASE Statement
+
+### Requirement
+
+Classify products as Premium or Affordable based on both Category and Price.
+
+```sql
+SELECT *,
+CASE
+    WHEN Category = 'Electronics' THEN
+        CASE
+            WHEN Price >= 300 THEN 'Premium Electronics'
+            ELSE 'Affordable Electronics'
+        END
+
+    WHEN Category = 'Furniture' THEN
+        CASE
+            WHEN Price >= 250 THEN 'Premium Furniture'
+            ELSE 'Affordable Furniture'
+        END
+
+    WHEN Category = 'Accessories' THEN
+        CASE
+            WHEN Price >= 25 THEN 'Premium Accessories'
+            ELSE 'Affordable Accessories'
+        END
+END AS Product_Group
+FROM Products;
+```
+
+---
+
+# Key Points
+
+- `CASE` evaluates conditions from top to bottom.
+- The first matching condition is returned.
+- `ELSE` is optional.
+- Without `ELSE`, the result is `NULL` if no condition matches.
+- `CASE` can be used in:
+  - SELECT
+  - ORDER BY
+  - WHERE
+  - GROUP BY
+  - HAVING
+  - UPDATE statements
+
+---
+
+# Learning Outcomes
+
+After completing these examples, you will be able to:
+
+- Use `CASE` to implement conditional logic.
+- Categorize records dynamically.
+- Create custom sorting orders.
+- Write nested `CASE` statements.
+- Improve query readability without complex logic.
+
+---
+
+# Conclusion
+
+The `CASE` statement is one of the most useful SQL features for applying business rules directly within queries. It simplifies conditional operations, data categorization, and custom sorting without modifying the original table.
