@@ -643,6 +643,110 @@ After completing these examples, you will be able to:
 - Improve query readability without complex logic.
 
 ---
+# SQL Table Creation, Data Insertion & Data Copying (MS SQL Server)
+
+## 📌 Overview
+
+This module introduces the fundamental SQL operations required to create databases and tables, insert records, understand datatype behavior, and copy data between tables. These commands form the foundation of database management in Microsoft SQL Server.
+
+---
+
+## Concepts Covered
+
+- Creating a database
+- Creating a table
+- Table columns and datatypes
+- Inserting single and multiple records
+- Inserting values into selected columns
+- Viewing table structure
+- Understanding `TINYINT` datatype
+- Implicit datatype conversion
+- Copying tables
+- Copying table structure only
+- Copying table structure with data
+
+---
+
+## Key Learnings
+
+### Database Creation
+A database acts as a container that stores related tables, views, procedures, and other database objects.
+
+### Table Creation
+A table is created by defining column names and assigning appropriate datatypes to each column.
+
+### Data Insertion
+Data can be inserted:
+- One record at a time
+- Multiple records in a single statement
+- Into all columns
+- Into only selected columns
+
+If values are provided only for selected columns, the remaining columns contain `NULL` (unless default values or constraints are defined).
+
+### Viewing Table Information
+SQL Server provides system views that allow developers to inspect a table's structure, including column names, datatypes, nullability, and other metadata.
+
+### Datatype Validation
+Every column accepts only values compatible with its datatype.
+
+For example:
+- `TINYINT` stores values from **0 to 255**.
+- Values outside this range generate an error.
+- SQL Server can automatically convert compatible values between datatypes when possible (implicit conversion).
+
+### Copying Tables
+SQL Server allows copying:
+- The complete table (structure and data)
+- Only selected columns
+- Only the table structure without records
+- Data into an already existing table
+
+These techniques are commonly used for backups, testing, reporting, and data migration.
+
+---
+
+## Important Points
+
+- Always choose appropriate datatypes for each column.
+- Specify column names while inserting data whenever possible.
+- Ensure inserted values match the datatype of each column.
+- Use table-copying techniques to create backups or temporary working tables.
+- Copying only the table structure is useful when preparing empty tables for future data.
+
+---
+
+## Applications
+
+These concepts are widely used in:
+- Student Management Systems
+- Employee Databases
+- Sales Management Systems
+- Inventory Management
+- Data Migration
+- Database Backup and Recovery
+- ETL (Extract, Transform, Load) Processes
+
+---
+
+## Learning Outcomes
+
+After completing this module, you will be able to:
+
+- Create databases and tables in MS SQL Server.
+- Design tables using suitable datatypes.
+- Insert single and multiple records efficiently.
+- Insert data into specific columns.
+- Understand datatype restrictions and conversions.
+- View table metadata.
+- Copy existing tables with or without data.
+- Create empty tables using existing table structures.
+
+---
+
+## Conclusion
+
+Table creation, data insertion, and table copying are among the most fundamental SQL operations. A solid understanding of these concepts helps build efficient, reliable, and scalable databases while preparing you for more advanced topics such as constraints, joins, indexing, stored procedures, and database optimization.
 
 # Conclusion
 
