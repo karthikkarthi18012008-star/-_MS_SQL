@@ -751,3 +751,65 @@ Table creation, data insertion, and table copying are among the most fundamental
 # Conclusion
 
 The `CASE` statement is one of the most useful SQL features for applying business rules directly within queries. It simplifies conditional operations, data categorization, and custom sorting without modifying the original table.
+
+# SQL - Subqueries & Order of Execution
+
+## Concepts Covered
+- Subqueries
+- IN
+- BETWEEN / NOT BETWEEN
+- Aggregate Subqueries
+- SQL Order of Execution
+- GROUP BY
+- HAVING
+
+---
+
+## Subqueries
+A subquery is a query written inside another query.
+
+### Examples
+- Find customers who placed orders within a date range.
+- Find customers whose orders are outside a specific date range.
+- Find employees whose salary is greater than the average salary.
+
+---
+
+## SQL Order of Execution
+
+1. FROM
+2. JOIN
+3. WHERE
+4. GROUP BY
+5. HAVING
+6. SELECT
+7. DISTINCT
+8. ORDER BY
+9. TOP
+
+---
+
+## Important Notes
+- `WHERE` filters rows before grouping.
+- `HAVING` filters groups after `GROUP BY`.
+- Use aggregate functions like `AVG()` in `HAVING`.
+- Column aliases cannot be used in `HAVING` because aliases are created in the `SELECT` step.
+
+### Correct
+```sql
+HAVING AVG(Salary) > 55000
+```
+
+### Incorrect
+```sql
+HAVING [Avg Salary] > 55000
+```
+
+---
+
+## Learning Outcomes
+- Understand subqueries.
+- Use `IN` with subqueries.
+- Compare values using aggregate subqueries.
+- Learn SQL's logical execution order.
+- Differentiate between `WHERE` and `HAVING`.
