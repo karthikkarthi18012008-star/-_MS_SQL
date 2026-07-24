@@ -813,3 +813,157 @@ HAVING [Avg Salary] > 55000
 - Compare values using aggregate subqueries.
 - Learn SQL's logical execution order.
 - Differentiate between `WHERE` and `HAVING`.
+# SQL Constraints in MS SQL Server
+
+## 📌 Overview
+Constraints are rules applied to table columns to maintain the accuracy, validity, and integrity of data. They prevent invalid data from being inserted or updated in a table.
+
+---
+
+# Constraints Covered
+
+1. NOT NULL
+2. UNIQUE
+3. CHECK
+4. DEFAULT
+5. PRIMARY KEY
+6. FOREIGN KEY
+
+---
+
+# 1. NOT NULL Constraint
+
+### Purpose
+Ensures that a column cannot contain `NULL` values.
+
+### Key Points
+- Mandatory field.
+- Prevents inserting empty values.
+- Can be added while creating a table or later using `ALTER TABLE`.
+
+### Example
+- `ID` cannot be NULL.
+- `Age` can also be made NOT NULL using `ALTER TABLE`.
+
+---
+
+# 2. UNIQUE Constraint
+
+### Purpose
+Ensures that all values in a column are unique.
+
+### Key Points
+- Duplicate values are not allowed.
+- Multiple NULL values are allowed in SQL Server.
+- Can be created during table creation or added later.
+
+### Example
+- Student ID should be unique.
+- First Name can also be made unique.
+
+---
+
+# 3. CHECK Constraint
+
+### Purpose
+Validates data based on a specified condition.
+
+### Key Points
+- Data is inserted only if the condition is satisfied.
+- Useful for restricting value ranges.
+
+### Example Conditions
+- `Age >= 10`
+- `EID > 5`
+
+If the condition is violated, SQL Server returns an error.
+
+---
+
+# 4. DEFAULT Constraint
+
+### Purpose
+Automatically assigns a default value when no value is provided.
+
+### Key Points
+- Prevents NULL values when appropriate.
+- Saves time during data insertion.
+
+### Example Defaults
+- `EID = 5`
+- `Firstname = 'Rohit'`
+- `Age = 25`
+
+---
+
+# 5. PRIMARY KEY Constraint
+
+### Purpose
+Uniquely identifies every row in a table.
+
+### Key Points
+- Cannot contain NULL values.
+- Duplicate values are not allowed.
+- Only one Primary Key is allowed per table.
+- Can be a single column or multiple columns (Composite Primary Key).
+
+### Composite Primary Key
+A combination of two or more columns used to uniquely identify each record.
+
+Example:
+- `(SID, Age)`
+
+---
+
+# 6. FOREIGN KEY Constraint
+
+### Purpose
+Creates a relationship between two tables.
+
+### Key Points
+- References the Primary Key of another table.
+- Prevents inserting values that do not exist in the parent table.
+- NULL values are allowed unless restricted.
+
+### Example
+Parent Table:
+- Student IDs
+
+Child Table:
+- Student Courses
+
+Only IDs present in the parent table can be inserted into the child table.
+
+---
+
+# Summary Table
+
+| Constraint | Purpose | Allows NULL | Allows Duplicate |
+|------------|---------|------------|------------------|
+| NOT NULL | Prevent NULL values | ❌ No | ✅ Yes |
+| UNIQUE | Prevent duplicate values | ✅ Yes (multiple in SQL Server) | ❌ No |
+| CHECK | Validates data based on a condition | Depends | Depends |
+| DEFAULT | Assigns default value | Yes (if no default used) | Yes |
+| PRIMARY KEY | Unique identifier | ❌ No | ❌ No |
+| FOREIGN KEY | Maintains relationship between tables | ✅ Yes | ✅ Yes (if value exists in parent table) |
+
+---
+
+# Learning Outcomes
+
+After completing this topic, you will be able to:
+
+- Understand the purpose of SQL Constraints.
+- Apply NOT NULL to mandatory columns.
+- Enforce uniqueness using UNIQUE.
+- Validate data using CHECK.
+- Assign automatic values using DEFAULT.
+- Create Primary Keys and Composite Primary Keys.
+- Build relationships between tables using Foreign Keys.
+- Improve database consistency and data integrity.
+
+---
+
+## Conclusion
+
+SQL Constraints are essential for maintaining data integrity and preventing invalid data from entering the database. Proper use of constraints ensures reliable, consistent, and well-structured databases.
