@@ -967,3 +967,173 @@ After completing this topic, you will be able to:
 ## Conclusion
 
 SQL Constraints are essential for maintaining data integrity and preventing invalid data from entering the database. Proper use of constraints ensures reliable, consistent, and well-structured databases.
+# SQL Window Functions – ROW_NUMBER(), RANK(), and DENSE_RANK()
+
+## 📌 Objective
+Learn how to assign rankings to rows using SQL Window Functions.
+
+---
+
+## 📚 Concepts Covered
+- ROW_NUMBER()
+- RANK()
+- DENSE_RANK()
+- OVER() clause
+- ORDER BY inside window functions
+- Handling duplicate values (ties)
+
+---
+
+## 🗂 Dataset
+Table: **Students**
+
+Columns:
+- `student_name`
+- `subject`
+- `marks`
+
+Each student has marks for three subjects.
+
+---
+
+## 1️⃣ ROW_NUMBER()
+
+### Definition
+Assigns a unique sequential number to every row based on the specified order.
+
+### Syntax
+```sql
+ROW_NUMBER() OVER(ORDER BY column_name)
+```
+
+### Example
+```sql
+SELECT *,
+ROW_NUMBER() OVER(ORDER BY marks DESC) AS Row_Number
+FROM Students;
+```
+
+### Key Points
+- Every row gets a unique number.
+- No duplicate row numbers.
+- If two rows have the same marks, numbering is still different.
+- Tie order is determined by SQL Server unless another column is added to `ORDER BY`.
+
+---
+
+## 2️⃣ RANK()
+
+### Definition
+Assigns the same rank to rows with equal values, but skips the next rank(s).
+
+### Syntax
+```sql
+RANK() OVER(ORDER BY column_name)
+```
+
+### Example
+```sql
+SELECT *,
+RANK() OVER(ORDER BY marks DESC) AS Rank
+FROM Students;
+```
+
+### Example Ranking
+
+| Marks | Rank |
+|-------:|-----:|
+| 95 | 1 |
+| 90 | 2 |
+| 90 | 2 |
+| 85 | 4 |
+
+Notice that **Rank 3 is skipped**.
+
+---
+
+## 3️⃣ DENSE_RANK()
+
+### Definition
+Assigns the same rank to duplicate values without skipping any ranks.
+
+### Syntax
+```sql
+DENSE_RANK() OVER(ORDER BY column_name)
+```
+
+### Example
+```sql
+SELECT *,
+DENSE_RANK() OVER(ORDER BY marks DESC) AS Dense_Rank
+FROM Students;
+```
+
+### Example Ranking
+
+| Marks | Dense Rank |
+|-------:|-----------:|
+| 95 | 1 |
+| 90 | 2 |
+| 90 | 2 |
+| 85 | 3 |
+
+Notice that **no rank is skipped**.
+
+---
+
+# Comparison
+
+| Function | Duplicate Values | Skips Ranks | Unique Number |
+|----------|------------------|-------------|---------------|
+| ROW_NUMBER() | ❌ No | ❌ No | ✅ Yes |
+| RANK() | ✅ Yes | ✅ Yes | ❌ No |
+| DENSE_RANK() | ✅ Yes | ❌ No | ❌ No |
+
+---
+
+## When to Use
+
+### ROW_NUMBER()
+Use when every row must have a unique sequence number.
+
+Examples:
+- Serial numbers
+- Pagination
+- Selecting the first record
+
+---
+
+### RANK()
+Use when ties should share the same rank and skipped ranks are acceptable.
+
+Examples:
+- Sports rankings
+- Competition results
+
+---
+
+### DENSE_RANK()
+Use when ties should share the same rank without leaving gaps.
+
+Examples:
+- Student rankings
+- Employee performance rankings
+
+---
+
+## Learning Outcomes
+After completing this exercise, you will be able to:
+- Understand SQL Window Functions.
+- Use `ROW_NUMBER()`, `RANK()`, and `DENSE_RANK()`.
+- Differentiate between the three ranking functions.
+- Handle duplicate values while ranking data.
+- Apply ranking functions in real-world SQL queries.
+
+---
+
+## Summary
+
+- **ROW_NUMBER()** → Every row gets a unique number.
+- **RANK()** → Same rank for ties; next rank is skipped.
+- **DENSE_RANK()** → Same rank for ties; no ranks are skipped.
+- All three functions require the `OVER()` clause with `ORDER BY`.
