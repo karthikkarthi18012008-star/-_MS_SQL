@@ -1137,3 +1137,62 @@ After completing this exercise, you will be able to:
 - **RANK()** → Same rank for ties; next rank is skipped.
 - **DENSE_RANK()** → Same rank for ties; no ranks are skipped.
 - All three functions require the `OVER()` clause with `ORDER BY`.
+- # SQL Assignments
+
+## Overview
+This repository contains solutions to SQL practice assignments covering essential SQL concepts using Microsoft SQL Server.
+
+## Topics Covered
+- Database & Table Creation
+- INSERT Statements
+- Aggregate Functions (`SUM`, `COUNT`, `AVG`)
+- `GROUP BY` & `HAVING`
+- Date Functions (`YEAR`, `MONTH`)
+- Subqueries
+- Pattern Matching (`LIKE`)
+- Joins (`INNER JOIN`, `LEFT JOIN`)
+- Sorting (`ORDER BY`)
+
+## Assignments
+
+### Assignment 1
+Employee Sales Analysis
+- Total sales by department
+- Sales count by employee
+- Average sales by department
+- Employees with multiple sales
+- Monthly sales summary
+
+### Assignment 2
+Subqueries
+- Salary above average
+- Employees hired after the oldest employee
+- Highest-paid employee
+- Employees in the same department
+- Departments with highest average salary
+
+### Assignment 3
+Pattern Matching
+- Names starting with 'J'
+- Last names ending with 'n'
+- Emails containing "john"
+- Five-character first names
+- Last names with 'a' as the second character
+
+### Assignment 4
+Joins
+- Employees with department names
+- All departments with employees
+- Employees without a matching department
+- Employees in Jane Doe's department
+- Department with the highest total salary
+
+## Learning Outcomes
+- Write efficient SQL queries.
+- Use aggregate functions and grouping.
+- Apply subqueries for data filtering.
+- Perform different types of joins.
+- Retrieve data using pattern matching.
+
+## Database
+**SQL Server (T-SQL)**
