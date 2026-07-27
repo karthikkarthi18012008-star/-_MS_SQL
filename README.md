@@ -1194,5 +1194,62 @@ Joins
 - Perform different types of joins.
 - Retrieve data using pattern matching.
 
-## Database
-**SQL Server (T-SQL)**
+# SQL Server – Stored Procedures, Recursive CTEs, Views & Indexes
+
+## 📌 Overview
+This project demonstrates important SQL Server concepts including **Stored Procedures**, **Recursive Common Table Expressions (CTEs)**, **Views**, and **Indexes** using an `Employees` table.
+
+---
+
+## 📚 Concepts Covered
+
+### 1. Stored Procedures
+- Creating stored procedures
+- Executing stored procedures
+- Modifying procedures using `ALTER PROCEDURE`
+- Reusable SQL code
+
+### 2. Recursive CTE (Common Table Expression)
+- Anchor Query
+- Recursive Query
+- Number generation using recursion
+- Factorial calculation
+
+### 3. Views
+- Creating views
+- Querying data through views
+- Updating data using views
+- Dropping views
+
+### 4. Indexes
+- Single-column indexes
+- Composite indexes
+- Improving query performance
+- Dropping indexes
+
+---
+
+## 🛠 SQL Commands Used
+- `CREATE DATABASE`
+- `CREATE TABLE`
+- `INSERT INTO`
+- `SELECT`
+- `CREATE PROCEDURE`
+- `ALTER PROCEDURE`
+- `WITH` (Recursive CTE)
+- `CREATE VIEW`
+- `UPDATE`
+- `CREATE INDEX`
+- `DROP VIEW`
+- `DROP INDEX`
+
+---
+
+## 🎯 Learning Outcomes
+After completing this project, you will be able to:
+- Create and execute stored procedures.
+- Understand and implement Recursive CTEs.
+- Create and manage SQL Views.
+- Improve query performance using Indexes.
+- Work with essential SQL Server database objects.
+
