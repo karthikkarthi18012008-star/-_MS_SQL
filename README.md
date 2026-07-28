@@ -1253,3 +1253,87 @@ After completing this project, you will be able to:
 - Improve query performance using Indexes.
 - Work with essential SQL Server database objects.
 
+# SQL – Finding the Nth Highest Salary
+
+## 📌 Objective
+
+Learn different SQL techniques to find the **2nd, 3rd, or Nth highest salary** from the `Employees` table.
+
+---
+
+## 📚 Concepts Covered
+
+* `MAX()` function
+* Subqueries
+* `TOP` keyword
+* `DISTINCT`
+* Common Table Expressions (CTE)
+* Window Functions
+* `DENSE_RANK()`
+* Nested Queries
+
+---
+
+## 🛠 Methods Used
+
+### 1. Subquery with `MAX()`
+
+Uses nested `MAX()` functions to find the next highest salary.
+
+**Best for:** 2nd or 3rd highest salary.
+
+---
+
+### 2. `TOP` + `DISTINCT`
+
+Fetches the top N distinct salaries and then selects the lowest value among them.
+
+**Best for:** Small values of N.
+
+---
+
+### 3. Common Table Expression (CTE) + `DENSE_RANK()`
+
+Assigns a rank to each distinct salary using `DENSE_RANK()` and retrieves the required rank.
+
+**Best for:** Any Nth highest salary.
+
+---
+
+### 4. Subquery + `DENSE_RANK()`
+
+Uses a derived table instead of a CTE to rank salaries and filter the desired rank.
+
+**Best for:** Compact queries without creating a CTE.
+
+---
+
+## 📖 Key SQL Functions
+
+| Function       | Purpose                                         |
+| -------------- | ----------------------------------------------- |
+| `MAX()`        | Returns the highest value                       |
+| `TOP`          | Limits the number of rows returned              |
+| `DISTINCT`     | Removes duplicate salary values                 |
+| `DENSE_RANK()` | Assigns consecutive ranks without gaps          |
+| `ORDER BY`     | Sorts salaries in ascending or descending order |
+| `WITH (CTE)`   | Creates a temporary result set                  |
+
+---
+
+## 📊 Learning Outcomes
+
+After completing this exercise, you will be able to:
+
+* Find the **2nd highest salary** using multiple SQL techniques.
+* Find the **3rd highest salary** using different approaches.
+* Extend the logic to retrieve the **Nth highest salary**.
+* Understand the difference between traditional subqueries and window functions.
+* Use `DENSE_RANK()` to handle duplicate salary values correctly.
+* Improve SQL problem-solving skills commonly asked in interviews.
+
+---
+
+## 💡 Interview Tip
+
+For finding the **Nth highest salary**, the most preferred approach in interviews is using **`DENSE_RANK()` with a CTE or subquery**, as it is simple, scalable, and handles duplicate salaries efficiently.
