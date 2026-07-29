@@ -1337,3 +1337,67 @@ After completing this exercise, you will be able to:
 ## 💡 Interview Tip
 
 For finding the **Nth highest salary**, the most preferred approach in interviews is using **`DENSE_RANK()` with a CTE or subquery**, as it is simple, scalable, and handles duplicate salaries efficiently.
+# SQL Self Join – Reporting Structure
+
+## 📌 Concept
+
+This example demonstrates how to use a **Self Join** to retrieve the relationship between employees and their managers from the same table.
+
+## 🗂️ Table
+
+**ReportingStructure**
+
+| Column       | Description                          |
+| ------------ | ------------------------------------ |
+| EmployeeID   | Unique ID of the employee            |
+| EmployeeName | Name of the employee                 |
+| ManagerID    | EmployeeID of the employee's manager |
+
+## 🎯 Objective
+
+Display:
+
+* **Manager Name**
+* **Reportee (Employee) Name**
+
+## 💡 SQL Concept Used
+
+* Self Join
+* Table Aliases (`a`, `b`)
+* INNER JOIN
+
+## ✅ Query
+
+```sql
+SELECT
+    a.EmployeeName AS Manager,
+    b.EmployeeName AS Reportee
+FROM ReportingStructure a
+INNER JOIN ReportingStructure b
+ON a.EmployeeID = b.ManagerID;
+```
+
+## 🔍 How It Works
+
+* `a` represents the **Manager**.
+* `b` represents the **Employee (Reportee)**.
+* `b.ManagerID` stores the manager's `EmployeeID`.
+* Matching `a.EmployeeID = b.ManagerID` links each employee to their manager.
+
+## 📊 Expected Output
+
+| Manager     | Reportee     |
+| ----------- | ------------ |
+| Alice Smith | Bob Johnson  |
+| Alice Smith | Carol White  |
+| Bob Johnson | David Brown  |
+| Bob Johnson | Eve Davis    |
+| Carol White | Frank Miller |
+
+## 📚 Learning Outcomes
+
+* Understand the purpose of a **Self Join**.
+* Learn how to join a table with itself using aliases.
+* Retrieve hierarchical data such as **Manager–Employee** relationships.
+* Practice using **INNER JOIN** with the same table.
+
