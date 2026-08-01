@@ -1,4 +1,5 @@
 
+
 create database salesdatabase
 
 use salesdatabase
