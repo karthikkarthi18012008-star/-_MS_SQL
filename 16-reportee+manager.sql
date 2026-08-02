@@ -1,8 +1,10 @@
 -- Create the table
 CREATE TABLE ReportingStructure (
+
     EmployeeID INT PRIMARY KEY,
     EmployeeName VARCHAR(100),
     ManagerID INT
+
 );
 
 -- Insert data into the table
