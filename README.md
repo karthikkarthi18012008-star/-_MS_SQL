@@ -1400,4 +1400,163 @@ ON a.EmployeeID = b.ManagerID;
 * Learn how to join a table with itself using aliases.
 * Retrieve hierarchical data such as **Manager–Employee** relationships.
 * Practice using **INNER JOIN** with the same table.
+* # 🗑️ SQL - Delete Duplicate Records
+
+## 📌 Project Overview
+This project demonstrates two common methods to identify and remove duplicate records from a SQL Server table.
+
+The sample table contains duplicate employee records, and both methods ensure that only unique records remain.
+
+---
+
+## 📂 Table Structure
+
+```sql
+CREATE TABLE EmployeeRecords (
+    EmployeeID INT,
+    EmployeeName VARCHAR(100),
+    ManagerID INT
+);
+```
+
+---
+
+## 📥 Sample Data
+
+The table contains duplicate rows for:
+
+- EmployeeID = 2 (Bob Johnson)
+- EmployeeID = 4 (David Brown)
+
+---
+
+## 🔹 Method 1: Delete Duplicates Using CTE and ROW_NUMBER()
+
+### Concept
+- `ROW_NUMBER()` assigns a sequential number to each duplicate group.
+- The first occurrence gets Row Number = 1.
+- Duplicate rows get Row Number > 1.
+- Delete all rows where Row Number > 1.
+
+### SQL Query
+
+```sql
+WITH cte AS
+(
+    SELECT *,
+           ROW_NUMBER() OVER
+           (
+               PARTITION BY EmployeeID, EmployeeName, ManagerID
+               ORDER BY EmployeeID
+           ) AS RowNo
+    FROM EmployeeRecords
+)
+
+DELETE FROM cte
+WHERE RowNo > 1;
+```
+
+### Advantages
+- Fast and efficient.
+- Deletes duplicates directly.
+- No need to create another table.
+
+---
+
+## 🔹 Method 2: Using DISTINCT
+
+### Concept
+- Copy unique records into a temporary table.
+- Remove all existing records.
+- Insert only unique records back into the original table.
+
+### SQL Query
+
+```sql
+SELECT DISTINCT *
+INTO #TempEmployee
+FROM EmployeeRecords;
+
+TRUNCATE TABLE EmployeeRecords;
+
+INSERT INTO EmployeeRecords
+SELECT *
+FROM #TempEmployee;
+
+SELECT *
+FROM #TempEmployee;
+```
+
+### Advantages
+- Very simple to understand.
+- Good for small tables.
+- Easy to implement.
+
+### Limitations
+- Requires additional storage.
+- Slightly slower for large datasets.
+
+---
+
+## 📊 Expected Output
+
+Before deleting duplicates:
+
+| EmployeeID | EmployeeName | ManagerID |
+|------------|--------------|-----------|
+| 1 | Alice Smith | NULL |
+| 2 | Bob Johnson | 1 |
+| 2 | Bob Johnson | 1 |
+| 3 | Carol White | 1 |
+| 4 | David Brown | 2 |
+| 4 | David Brown | 2 |
+| 5 | Eve Davis | 2 |
+| 6 | Frank Miller | 3 |
+
+After removing duplicates:
+
+| EmployeeID | EmployeeName | ManagerID |
+|------------|--------------|-----------|
+| 1 | Alice Smith | NULL |
+| 2 | Bob Johnson | 1 |
+| 3 | Carol White | 1 |
+| 4 | David Brown | 2 |
+| 5 | Eve Davis | 2 |
+| 6 | Frank Miller | 3 |
+
+---
+
+## 📚 SQL Concepts Used
+
+- CREATE TABLE
+- INSERT INTO
+- SELECT
+- ORDER BY
+- Common Table Expression (CTE)
+- ROW_NUMBER()
+- PARTITION BY
+- DELETE
+- DISTINCT
+- TRUNCATE TABLE
+- Temporary Tables
+
+---
+
+## 🎯 Learning Outcomes
+
+After completing this project, you will understand:
+
+- How duplicate records occur in SQL tables.
+- How to identify duplicates using `ROW_NUMBER()`.
+- How to remove duplicates using a CTE.
+- How to remove duplicates using `DISTINCT`.
+- The advantages and limitations of each approach.
+
+---
+
+## 🛠️ Database
+
+- Microsoft SQL Server (MSSQL)
+
+
 
