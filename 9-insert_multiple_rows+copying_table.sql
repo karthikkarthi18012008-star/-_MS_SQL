@@ -1,5 +1,6 @@
 
 --creating table
+
 create database Students
 create table student_details(
 Student_Name nvarchar(256),
