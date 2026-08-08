@@ -12,6 +12,7 @@ age tinyint,
 firstname varchar(256)
 )
 
+
 insert into test_not_null values(1,24,'karthik')
 
 insert into test_not_null values(null,20,'ajay') --error bcz of null in id
